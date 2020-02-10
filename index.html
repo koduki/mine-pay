@@ -1,22 +1,9 @@
 <html>
-
-<head>
-</head>
-
-<body>
-    <button onclick="sayHI()">Say HI</button>
-    <button onclick="unknownCmd()">Send unknown command</button>
-    <button onclick="stop()">Stop worker</button>
-    <output id="result"></output>
-
-    <script>
-        var worker = new Worker('minepay.js');
-        worker.addEventListener('message', function (e) {
-            document.getElementById('result').textContent = e.data;
-        }, false);
-        worker.postMessage({ 'cmd': 'start', 'msg': 'Hi' });
-
-    </script>
-</body>
-
+    <head>
+        <title>Sample Page</title>
+    </head>
+    <body>
+        <img id="minepay" src="./mine-pay.png" />
+        <script src="minepay.js"></script>
+    </body>
 </html>
